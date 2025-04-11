@@ -1,10 +1,10 @@
 const {DataTypes, Model} = require("sequelize")
-const sequelize = require("../config/db")
+const sequelize = require("../../config/db")
 
 
-class Project extends Model {}
+class User extends Model {}
 
-Project.init(
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,11 +12,7 @@ Project.init(
             allowNull: false,
             autoIncrement: true
         },
-        projectName:{
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        subject:{
+        name:{
             type: DataTypes.STRING,
             allowNull: false
         }
@@ -27,4 +23,4 @@ Project.init(
     }
 )
 
-module.exports = {Project}
+module.exports = {User}
