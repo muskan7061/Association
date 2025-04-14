@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/users", userRouter);
 
 sequelize
-  .sync({ force: true })
+  .sync({ alter: true })
   .then(() => console.log("Sync"))
   .catch((error) => console.log("Sync FAILED", error));
 

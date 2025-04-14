@@ -21,13 +21,15 @@ Task.init(
             type: DataTypes.STRING,
             allowNull: false, 
         },
-        projectID: {
+        lectureID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
+    
         }
     }, {
-        sequelize
+        sequelize,
+        timestamps: false
     }
 )
 

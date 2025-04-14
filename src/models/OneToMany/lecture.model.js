@@ -3,9 +3,9 @@ const sequelize = require("../../config/db")
 
 
 
-class Project extends Model {}
+class Lecture extends Model {}
 
-Project.init(
+Lecture.init(
     {
         id:{
             type: DataTypes.INTEGER,
@@ -13,14 +13,15 @@ Project.init(
             primaryKey: true,
             autoIncrement: true
         },
-        projectName:{
+        lectureName:{
             type: DataTypes.STRING,
             allowNull: false, 
         }
     },{
-        sequelize
+        sequelize,
+        timestamps: false
     }
 )
 
 
-module.exports = {Project}
+module.exports = {Lecture}

@@ -1,8 +1,10 @@
-const { User } = require("./OneToOne/user.model");
-const { Project } = require("./OneToOne/project.model");
 const { Country } = require("./OneToMany/country.model");
+const { Lecture } = require("./OneToMany/lecture.model");
 const { State } = require("./OneToMany/state.model");
 const { Task } = require("./OneToMany/task.model");
+const { Project } = require("./OneToOne/project.model");
+const { User } = require("./OneToOne/user.model");
+
 
 // one to one
 User.hasOne(Project, {
@@ -28,15 +30,15 @@ State.belongsTo(Country, {
 
 //one to many 2
 
-Project.hasMany(Task, {
-  foreignKey: "projectID",
-  as: "Task",
+Lecture.hasMany(Task, {
+  foreignKey: "lectureID",
+  as: "Tasks",
 });
 
-Task.belongsTo(Project,{
-    foreignKey: "projectID",
-    as: "Task"
+Task.belongsTo(Lecture,{
+    foreignKey: "lectureID",
+    as: "Lecture"
 
 })
 
-module.export = { User, Project };
+module.exports = { User, Project, Lecture, Task };
