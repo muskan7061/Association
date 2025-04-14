@@ -5,15 +5,17 @@ const { State } = require("../../models/OneToMany/state.model");
 const addCountry = async (req, res) =>{
     try {
         const {countryName,stateName} = req.body
-        console.log(countryName);
+        console.log('+++++++++++++',countryName, stateName);
+
         
         const addcountry = await Country.findOrCreate({where: {countryName}})
-        console.log("===", addcountry);
+        console.log("===>", addcountry);
         
         const addstate = await State.create({
             stateName,
-            countryId: addcountry.id
+            countryId: addcountry[0].id
          })
+         console.log("===>", addstate);
         
         return res.status(201).json({
             data: [addcountry,addstate]
