@@ -18,10 +18,10 @@ State.init(
         countryId:{
             type:DataTypes.INTEGER,
             allowNull: false, 
-            references: {
-                model: "Countries",
-                key: "id"
-              },
+            // references: {
+            //     model: "Countries",
+            //     key: "id"
+            //   },
             onDelete: "CASCADE",
             onUpdate: "CASCADE"
         }

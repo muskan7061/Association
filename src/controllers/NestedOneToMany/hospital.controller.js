@@ -18,9 +18,7 @@ const addHospital = async (req, res) =>{
 
 const getHospitalDetails = async (req, res) =>{
     try {
-        const id = req.params.id
-        // const getDetails = await Hospital.findOne({where: {id:id}})
-        
+    const id = req.params.id        
     const getDetails = await Hospital.findOne({
         where: { id },
         include: [
