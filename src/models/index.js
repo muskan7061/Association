@@ -4,7 +4,9 @@ const { State } = require("./OneToMany/state.model");
 const { Task } = require("./OneToMany/task.model");
 const { Project } = require("./OneToOne/project.model");
 const { User } = require("./OneToOne/user.model");
-
+const { Hospital } = require("./NestedOneToMany/hospital.model");
+const { HospitalSection } = require("./NestedOneToMany/hospitalSection.Model");
+const { Doctor } = require("./NestedOneToMany/doctor.model");
 
 // one to one
 User.hasOne(Project, {
@@ -35,10 +37,30 @@ Lecture.hasMany(Task, {
   as: "Tasks",
 });
 
-Task.belongsTo(Lecture,{
-    foreignKey: "lectureID",
-    as: "Lecture"
+Task.belongsTo(Lecture, {
+  foreignKey: "lectureID",
+  as: "Lecture",
+});
 
+// nested one to many
+Hospital.hasMany(HospitalSection, {
+  foreignKey: "hospitalID",
+  as: "HospitalSections",
+});
+
+HospitalSection.belongsTo(Hospital, {
+  foreignKey: "hospitalID",
+  as: "Hospital",
+});
+
+// connect hospital to doctor
+HospitalSection.hasMany(Doctor, {
+  foreignKey: "sectionID",
+  as: "Doctors"
 })
+Doctor.belongsTo(HospitalSection, {
+  foreignKey: "sectionID",
+  as: "HospitalSection",
+});
 
-module.exports = { User, Project, Lecture, Task };
+module.exports = { User, Project, Lecture, Task, Hospital, HospitalSection };

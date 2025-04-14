@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const sequelize = require("./config/db");
 const userRouter = require("./routes/user.route");
+const nestedRouter = require("./routes/nestedOneToMany.route")
 require("./models/index");
 
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1/users", userRouter);
+app.use("/nested/many", nestedRouter)
 
 sequelize
   .sync({ alter: true })

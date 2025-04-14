@@ -1,0 +1,60 @@
+{
+    "message": "Fetch successfully",
+    "data": {
+        "id": 1,
+        "hospitalName": "aastha hosp.",
+        "HospitalSections": [
+            {
+                "id": 1,
+                "hospitalSectionName": "kidney ",
+                "onWhichfloor": 1,
+                "buildingName": "B wing",
+                "hospitalID": 1,
+                "Doctors": [
+                    {
+                        "id": 1,
+                        "doctorName": "Dr. Muskan",
+                        "sectionID": 1
+                    },
+                    {
+                        "id": 2,
+                        "doctorName": "Dr. Niraj",
+                        "sectionID": 1
+                    },
+                    {
+                        "id": 3,
+                        "doctorName": "Dr. samri",
+                        "sectionID": 1
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "hospitalSectionName": "heart specialized ",
+                "onWhichfloor": 3,
+                "buildingName": "C wing",
+                "hospitalID": 1,
+                "Doctors": [
+                    {
+                        "id": 4,
+                        "doctorName": "Dr. kajal",
+                        "sectionID": 2
+                    },
+                    {
+                        "id": 5,
+                        "doctorName": "Dr. sejal",
+                        "sectionID": 2
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "hospitalSectionName": "hairs transplant",
+                "onWhichfloor": 4,
+                "buildingName": "C wing",
+                "hospitalID": 1,
+                "Doctors": []
+            }
+        ]
+    }
+}
