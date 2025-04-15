@@ -3,8 +3,8 @@ const { Product } = require("../../models/NestedOneToMany/product.models");
 
 const addProduct = async (req, res) =>{
     try {
-        const {productName,productDetails,expiryDate,manufactureDate,vegeterian, companyID} = req.body
-        const createProduct = await Product.create({productName,productDetails,expiryDate,manufactureDate,vegeterian, companyID})
+        const {productName,productDetails,expiryDate,manufactureDate, companyID} = req.body
+        const createProduct = await Product.create({productName,productDetails,expiryDate,manufactureDate, companyID})
         return res.status(200).json({
             data: createProduct
         })

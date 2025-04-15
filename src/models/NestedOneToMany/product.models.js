@@ -28,10 +28,6 @@ Product.init(
             type:DataTypes.DATE,
             allowNull: false,
         },
-        vegeterian:{
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
         companyID:{
             type: DataTypes.INTEGER,
             allowNull: false,
