@@ -15,33 +15,51 @@ const addHospital = async (req, res) =>{
     }
 }
 
+// simpley gethospital details
+// const getHospitalDetails = async (req, res) =>{
+//     try {
+//     const id = req.params.id        
+//     const getDetails = await Hospital.findOne({
+//         where: { id },
+//         include: [
+//           {
+//             model: HospitalSection,
+//             as: "HospitalSections", 
+//             include: [
+//               {
+//                 model: Doctor,
+//                 as: "Doctors", 
+//               },
+//             ],
+//           },
+//         ],
+//       });
+//         return res.status(201).json({
+//             message: "Fetch successfully",
+//             data: getDetails
+//         })
+//     } catch (error) {
+//         console.error("Error in getHospitalDetails", error);
+//         res.status(500).json({ error: error.message });
+//     }
+// }
 
+// eager laoding
 const getHospitalDetails = async (req, res) =>{
-    try {
-    const id = req.params.id        
-    const getDetails = await Hospital.findOne({
-        where: { id },
-        include: [
-          {
-            model: HospitalSection,
-            as: "HospitalSections", 
-            include: [
-              {
-                model: Doctor,
-                as: "Doctors", 
-              },
-            ],
-          },
-        ],
-      });
-        return res.status(201).json({
-            message: "Fetch successfully",
-            data: getDetails
-        })
-    } catch (error) {
-        console.error("Error in getHospitalDetails", error);
-        res.status(500).json({ error: error.message });
-    }
+  try {
+    const id = req.params.id
+    const findHospital = await Hospital.findOne({
+      where: {id:id},
+      include: HospitalSection,
+      required: false
+    })
+    return res.status(201).json({
+      data: findHospital
+  })
+  } catch (error) {
+    console.error("Error in getHospitalDetails", error);
+    res.status(500).json({ error: error.message });
+  }
 }
 
 

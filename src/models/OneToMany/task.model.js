@@ -24,7 +24,6 @@ Task.init(
         lectureID: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true,
     
         }
     }, {

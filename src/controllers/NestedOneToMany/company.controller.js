@@ -21,14 +21,6 @@ const addComapny = async (req, res) => {
 const getCompanyOne = async (req, res) => {
   try {
     const id = req.params.id;
-    // const checkExistID = await Comapany.findAll({where:{id:id}})
-    // if(checkExistID)
-    // {
-    //     return res.status(409).json({
-    //         status: 409,
-    //         message: "ID doesnt exist"
-    //     })
-    // }
     const companyFindOne = await Comapany.findOne({
       where: { id: id },
       include: [

@@ -12,7 +12,7 @@ const router = express.Router()
 router.post("/create-hopital", addHospital)
 router.post("/create-hopitalSection", hospitalSectionController.hospitalSection)
 router.post("/create-doctor",doctorController.addDoctor)
-router.get("/get-hospital-details/:id", getAllCompany )
+router.get("/get-hospital-details/:id", getHospitalDetails )
 
 
 router.post("/create-company",addComapny)
