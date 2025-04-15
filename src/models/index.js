@@ -10,6 +10,8 @@ const { HospitalSection } = require("./NestedOneToMany/hospitalSection.Model");
 const { Doctor } = require("./NestedOneToMany/doctor.model");
 const { Student } = require("./ManyToMany/student.model");
 const { Course } = require("./ManyToMany/course.model");
+const { Comapany } = require("./NestedOneToMany/company.model");
+const { Product } = require("./NestedOneToMany/product.models");
 
 
 
@@ -46,7 +48,15 @@ Task.belongsTo(Lecture, {
   foreignKey: "lectureID",
   as: "Lecture",
 });
-
+// one to many 3
+Comapany.hasMany(Product,{
+  foreignKey: "companyID",
+  as: "product"
+})
+Product.belongsTo(Comapany, {
+  foreignKey: "companyID",
+  as: "company"
+})
 // nested one to many
 Hospital.hasMany(HospitalSection, {
   foreignKey: "hospitalID",

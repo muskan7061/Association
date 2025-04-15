@@ -4,10 +4,9 @@ const addCourse = async (req, res) => {
   try {
     const { language, courseName, studentID, grade } = req.body;
 
-    // Step 1: Create the course
     const createCourse = await Course.create({ language, courseName });
 
-    // Step 2: Associate with student and include grade
+    // Associate with student and include grade
     if (studentID && grade) {
       const student = await Student.findByPk(studentID);
       if (student) {
