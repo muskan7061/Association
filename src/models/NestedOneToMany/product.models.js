@@ -36,7 +36,7 @@ Product.init(
 
     },{
         sequelize, 
-        timestamps: false
+        timestamps: true
     }
 )
 

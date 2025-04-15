@@ -3,6 +3,14 @@ const  addComments  = async (req, res) =>{
     try {
         const {addComments, productID} = req.body
         const createComment = await Comment.create({ addComments, productID });
+        // await Comment.destroy({
+        //     where:{id:1},
+        //   })
+        await Comment.restore({
+            where: {
+              id: 1
+            },
+          });
         return res.status(200).json({
           data: createComment,
         });

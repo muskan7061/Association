@@ -22,7 +22,8 @@ Comment.init(
         }
     },{
         sequelize, 
-        timestamps: false
+        paranoid: true,
+        deletedAt: "deleteComment"
     }
 )
 
