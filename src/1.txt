@@ -1,0 +1,17 @@
+One Project can have many Tasks.
+
+Each Task belongs to a Project.
+
+Each Task can have many Comments.
+
+Each Comment belongs to a Task.
+
+Create a project with multiple tasks, and each task has multiple comments.
+
+Fetch the project with tasks and each task’s comments (nested include).
+
+Add soft-delete for comments (paranoid mode).
+
+Order comments by newest first.
+
+https://chatgpt.com/c/67dd3f13-658c-800a-aea3-058f5d0b6e06
