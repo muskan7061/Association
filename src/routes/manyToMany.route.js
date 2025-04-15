@@ -4,7 +4,7 @@ const express = require("express")
 
 const router = express.Router()
 
-router.post("/create-student", studentController.addStudent)
+router.post("/create-student", studentController.addManyStudent)
 router.post("/create-course", courceController.addCourse)
 
 

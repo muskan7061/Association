@@ -1,24 +1,22 @@
-const { Course, Student } = require("../../models");
+const { Course, Student, StudentCourse } = require("../../models");
 
 const addCourse = async (req, res) => {
   try {
-    const { language, courseName, studentID, grade } = req.body;
+    const {language, courseName, studentID} = req.body;
 
     const createCourse = await Course.create({ language, courseName });
 
-    // Associate with student and include grade
-    if (studentID && grade) {
+    if (studentID ) {
       const student = await Student.findByPk(studentID);
       if (student) {
         await createCourse.addStudent(student, {
-          through: { grade },
+          through: StudentCourse
         });
       }
     }
 
     return res.status(201).json({
       data: createCourse,
-      message: "Course created and student linked with grade.",
     });
   } catch (error) {
     console.error("Error in addCourse", error);

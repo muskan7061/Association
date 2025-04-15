@@ -1,7 +1,7 @@
 const { Student } = require("../../models");
 
 
-const addStudent = async (req, res) =>{
+const addManyStudent = async (req, res) =>{
     try {
         const {studentName} = req.body
         const createStudent = await Student.create({studentName})
@@ -15,4 +15,4 @@ const addStudent = async (req, res) =>{
 }
 
 
-module.exports = {addStudent}
+module.exports = {addManyStudent}

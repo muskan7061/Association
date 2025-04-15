@@ -5,10 +5,7 @@ class StudentCourse extends Model {}
 
 StudentCourse.init(
   {
-    grade: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+
   },
   {
     sequelize,

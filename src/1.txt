@@ -13,3 +13,23 @@ Fetch the comapny with products and each product's comments (nested include).
 Add soft-delete for comments (paranoid mode).
 
 Order comments by newest first.
+
+
+ Both await and promises are used to handle the operation asynchronously but the most 
+ secure method is promises because in that there are three states such as pending,resolve and rejected 
+ and  if the task is not completed yet then it will go to pending , if the task is completed then it will go 
+ to the resolve and if the task is rejected then it goes to rejected . by these three method in promises we can easily 
+ run the code asynchronously . In promises we can handle the error by using then and catch method but when we use asynchronous
+  operation then we used async and await functionality and for handling the error we use try and catch method. 
+ In await functionality it helps to remove the complexity of the code which try to block the code and run the code synchronously.
+
+
+
+
+
+process.beforeExit()
+process.disconnect()
+process.exit()
+process.message()
+process.uncaughtException()
+process.env()
