@@ -15,7 +15,11 @@ Doctor.init(
         doctorName:{
             type:DataTypes.STRING,
             allowNull: false,
-        }, 
+        },
+        age:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         sectionID:{
             type: DataTypes.INTEGER,
             allowNull: false,

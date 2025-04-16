@@ -8,7 +8,6 @@ const express = require("express")
 
 
 const router = express.Router()
-
 router.post("/create-hopital", addHospital)
 router.post("/create-hopitalSection", hospitalSectionController.hospitalSection)
 router.post("/create-doctor",doctorController.addDoctor)

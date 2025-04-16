@@ -2,8 +2,8 @@ const { Doctor } = require("../../models/NestedOneToMany/doctor.model");
 
 const addDoctor = async (req, res) =>{
     try {
-        const {doctorName, sectionID} = req.body
-        const createDoctor = await Doctor.create({doctorName, sectionID})
+        const {doctorName, sectionID, age} = req.body
+        const createDoctor = await Doctor.create({doctorName, sectionID, age})
         return res.status(201).json({
             message: "Hospital created",
             data: createDoctor

@@ -53,7 +53,7 @@ Task.belongsTo(Lecture, {
 // nested one to many 1
 Hospital.hasMany(HospitalSection, {
   foreignKey: "hospitalID",
-  as: "HospitalSections",
+  as: "HospitalSection",
 });
 
 HospitalSection.belongsTo(Hospital, {
