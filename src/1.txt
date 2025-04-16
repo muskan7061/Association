@@ -33,3 +33,31 @@ process.exit()
 process.message()
 process.uncaughtException()
 process.env()
+
+
+What is Process ? 
+
+=>  Node.js ka process object ek global object hai jo current running Node.js process ke baare mein information deta hai   aur usse control bhi karne deta hai.
+
+1) process.beforeExit()
+
+=> Emits the 'beforeExit' event right before the Node.js process exits, if there is no more work pending in the event loop.
+
+2) process.disconnect()
+
+=>  Used when the process is a child process connected to a parent via IPC (Inter-Process Communication), and we want to terminate that connection.
+3) process.exit()
+
+=> Immediately terminates the Node.js process with the given exit code.
+
+4) process.message()
+
+=> Enables communication between parent and child processes by sending messages.
+
+5) process.uncaughtException()
+
+=>Catches unhandled exceptions in the application, preventing the app from crashing instantly.
+
+6) process.env()
+
+=> Provides access to the environment variables.
