@@ -26,10 +26,10 @@ app.use("/nested/many", nestedRouter)
 // for many to many 
 app.use("/manyToMany",  manyToManyRouter)
  
-sequelize
-  .sync({ alter: true })
-  .then(() => console.log("Sync"))
-  .catch((error) => console.log("Sync FAILED", error));
+// sequelize
+//   .sync({ alter: true })
+//   .then(() => console.log("Sync"))
+//   .catch((error) => console.log("Sync FAILED", error));
 
 app.listen(process.env.PORT || 8080, () => {
   console.log("App is listing on", process.env.PORT || 8080);

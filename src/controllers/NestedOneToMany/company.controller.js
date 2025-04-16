@@ -1,6 +1,7 @@
 const { Comapany } = require("../../models/NestedOneToMany/company.model");
 const { Product } = require("../../models/NestedOneToMany/product.models");
 const {Comment} = require("../../models/NestedOneToMany/comment.model")
+const {Sequelize} = require("sequelize")
 
 const addComapny = async (req, res) => {
   try {
@@ -18,6 +19,8 @@ const addComapny = async (req, res) => {
   }
 };
 
+
+// eager laoding
 const getCompanyOne = async (req, res) => {
   try {
     const id = req.params.id;
@@ -27,13 +30,7 @@ const getCompanyOne = async (req, res) => {
         {
           model: Product,
           as: "product",
-          include:[
-            {
-                model: Comment,
-                as: "Comment"
-            }
-          ]
-   
+     
         },
       ],
     });
@@ -42,7 +39,7 @@ const getCompanyOne = async (req, res) => {
       message: "fetch company by id successfully",
       data: companyFindOne,
     });
-  } catch (error) {
+  } catch (error) { 
     console.log("Error in getCompanyOne", error);
     return res.status(500).json({
       message: "Internal server error",
@@ -58,13 +55,14 @@ const getAllCompany = async (req, res) =>{
                 {
                   model: Product,
                   as: "product",
-                  include:[
-                    {
-                        model: Comment,
-                        as: "Comment"
-                    }
-                  ]
-           
+                  required: true,
+                  // this is for filtering thats why manufactureDate companyID createdAt updatedAt giving data 
+                  where:{
+                    product: Sequelize.col('product.createdAt'),
+                  },
+                  // where: {
+                  //   productName: 'Ecommerce'
+                  // } 
                 },
               ],
         })
