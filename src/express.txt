@@ -1,0 +1,70 @@
+Express 
+- Express js is a small framework for nodejs 
+- It is provide list of many feature to developed web and mobile application 
+- It is simply developed serverside application with Routing, Middleware, Rest Apis and Http method
+- Express.js is a minimal and flexible Node.js web application framework that provides a robust
+
+
+features
+- Middleware and Routing
+- Static File Serving
+- Templating Power - EJS, PUG, HBS, (generate dynamic HTML content)
+- single-page applications and RESTful API
+
+ExpressJs build in midddleware method
+1 app.use(express.json()) 
+used for parsing incoming requests with JSON payload
+making that data available in the req.body or further processing within the routes
+parse in to json based on BODY-PARSER (Ye HTTP request ke body ko parse karta hai — especially POST, PUT, aur PATCH requests mein.)
+
+2 app.use(express.raw())
+It parses incoming request payloads into a Buffer and is based on body-parser
+It returns an Object
+
+When would you use it?
+When you're receiving binary data (e.g., images, audio, custom file formats)
+When you don’t want Express to parse the body as JSON or string — you want full control
+Often used in webhooks (e.g., Stripe webhooks), where you need the exact raw body to verify a signature
+
+3 app.use(express.static(root='PUBLIC', [options))
+const options = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html'],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders (res, path, stat) {
+    res.set('x-timestamp', Date.now())
+  }
+}
+
+app.use(express.static('public', options))
+allows you to serve static files based on  sarve-static(like images, HTML, CSS, and JavaScript) directly to the client
+Create a new middleware function to serve files from within a given root directory. 
+The file to serve will be determined by combining req.
+url with the provided root directory. When a file is not found, instead of sending a 404 response, 
+this module will instead call next() to move on to the next middleware, allowing for stacking and fall-backs.
+
+
+4 express.urlencoded([options])
+used to parse URL-encoded form data, making it accessible as a JavaScript object in req.body.
+
+express.urlencoded()	- Form se aaya data read karne ke liye
+extended: true		- Thoda complex data (array, object) bhi handle karta hai
+req.body		- Form ka pura data yahan milta hai
+
+5 express.Router()
+
+
+
+
+
+
+
+
+
+
+
+MIDDLEWARES	
+
