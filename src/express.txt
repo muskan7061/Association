@@ -26,7 +26,7 @@ When you're receiving binary data (e.g., images, audio, custom file formats)
 When you don’t want Express to parse the body as JSON or string — you want full control
 Often used in webhooks (e.g., Stripe webhooks), where you need the exact raw body to verify a signature
 
-3 app.use(express.static(root='PUBLIC', [options))
+3 app.use(express.static(root='PUBLIC', [options]))
 const options = {
   dotfiles: 'ignore',
   etag: false,
