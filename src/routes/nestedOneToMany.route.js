@@ -15,8 +15,8 @@ router.get("/get-hospital-details/:id", getHospitalDetails )
 
 
 router.post("/create-company",addComapny)
-router.get("/get-company/:id", getCompanyOne)
-router.get("/get-all-company", getAllCompany)
+router.all("/get-company/:id", getCompanyOne)
+router.all("/get-all-company", getAllCompany)
 router.post("/create-product", productController.addProduct)
 router.post("/create-comment", commentController.addComments)
 
